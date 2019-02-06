@@ -3,4 +3,4 @@ INSERT INTO `Account_Building`
 VALUES
     (1, 10, 5),
     (2, 12, 3),
-    (3, 14, 0);
+    (3, 14, -2);

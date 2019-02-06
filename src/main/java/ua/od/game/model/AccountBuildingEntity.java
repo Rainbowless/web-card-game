@@ -3,7 +3,6 @@ package ua.od.game.model;
 public class AccountBuildingEntity {
     private Integer id;
     private Integer buildingId;
-    private Integer accountBuildingId;
     private Float amount;
 
     public Integer getId() {
@@ -21,12 +20,6 @@ public class AccountBuildingEntity {
     public void setBuildingId(Integer buildingId) {
         this.buildingId = buildingId;
     }
-
-    public Integer getAccountBuildingId() {
-        return accountBuildingId;
-    }
-
-    public void setAccountBuildingId(Integer accountBuildingId) { this.accountBuildingId = accountBuildingId; }
 
     public Float getAmount() {
         return amount;

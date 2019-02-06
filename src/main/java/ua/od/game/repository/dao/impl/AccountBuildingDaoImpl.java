@@ -21,8 +21,6 @@ public class AccountBuildingDaoImpl implements AccountBuildingDao {
             List<AccountBuildingEntity> result = new LinkedList<>();
             while (resultSet.next()) {
                 result.add(new AccountBuildingEntity() {{
-                    setId(resultSet.getInt("id"));
-                    setAccountBuildingId(resultSet.getInt("account_id"));
                     setBuildingId(resultSet.getInt("building_id"));
                     setAmount(resultSet.getFloat("amount"));
                 }});
