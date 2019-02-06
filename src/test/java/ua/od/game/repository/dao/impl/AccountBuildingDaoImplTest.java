@@ -24,7 +24,10 @@ public class AccountBuildingDaoImplTest extends DbTest {
 
     @Test
     public void getAccountBuildingListTest(){
-        List<AccountBuildingEntity> accountBuildingEntities = buildingDao.getAccountBuildingList(3);
+        List<AccountBuildingEntity> accountBuildingEntities = buildingDao.getAccountBuildingList(1);
+
+        assertFalse(accountBuildingEntities.isEmpty());
+
         HashSet<AccountBuildingEntity> buildingHashSet = new HashSet<>(accountBuildingEntities);
         assertFalse(buildingHashSet.size() != accountBuildingEntities.size());
 
@@ -33,7 +36,6 @@ public class AccountBuildingDaoImplTest extends DbTest {
             System.out.println(accountBuildingEntities.get(i).getAmount() + " ");
             assertFalse(((accountBuildingEntities.get(i).getBuildingId()) == null) ||
                     (accountBuildingEntities.get(i).getAmount() == null));
-
         }
     }
 
