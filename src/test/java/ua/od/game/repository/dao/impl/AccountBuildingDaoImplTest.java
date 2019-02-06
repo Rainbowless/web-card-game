@@ -10,6 +10,7 @@ import ua.od.game.repository.helper.SqlHelper;
 
 import java.sql.ResultSet;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,16 +24,17 @@ public class AccountBuildingDaoImplTest extends DbTest {
 
     @Test
     public void getAccountBuildingListTest(){
-        Integer accId = 3, buildingId = 14; Float amount = -2f;
-        List<AccountBuildingEntity> accountBuildingEntities = buildingDao.getAccountBuildingList(accId);
+        List<AccountBuildingEntity> accountBuildingEntities = buildingDao.getAccountBuildingList(3);
+        HashSet<AccountBuildingEntity> buildingHashSet = new HashSet<>(accountBuildingEntities);
+        assertFalse(buildingHashSet.size() != accountBuildingEntities.size());
 
-        System.out.println(accountBuildingEntities.get(0).getBuildingId() + " ");
-        System.out.println(accountBuildingEntities.get(0).getAmount() + " ");
+        for (int i = 0; i < accountBuildingEntities.size(); i++) {
+            System.out.println(accountBuildingEntities.get(i).getBuildingId() + " ");
+            System.out.println(accountBuildingEntities.get(i).getAmount() + " ");
+            assertFalse(((accountBuildingEntities.get(i).getBuildingId()) == null) ||
+                    (accountBuildingEntities.get(i).getAmount() == null));
 
-        assertFalse(
-                (accountBuildingEntities.get(0).getBuildingId() != buildingId) ||
-               !(accountBuildingEntities.get(0).getAmount().equals(amount))
-        );
+        }
     }
 
     @Test
