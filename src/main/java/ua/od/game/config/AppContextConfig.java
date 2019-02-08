@@ -118,6 +118,10 @@ public class AppContextConfig {
                     bindAsContract(MessageDaoImpl.class).to(MessageDao.class);
                     bindAsContract(MessageServiceImpl.class).to(MessageService.class);
                     bindAsContract(MessageControllerImpl.class).to(MessageController.class);
+
+                    bindAsContract(AccountBuildingDaoImpl.class).to(AccountBuildingDao.class);
+                    bindAsContract(AccountBuildingServiceImpl.class).to(AccountBuildingService.class);
+                    bindAsContract(AccountBuildingControllerImpl.class).to(AccountBuildingController.class);
                 }
             });
         }};
